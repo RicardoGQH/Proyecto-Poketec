@@ -37,7 +37,7 @@ oponente={"pokemons":{},
 from PIL import Image, ImageTk
 def cargar_imagen1(nombre):
     #esta funcion permite cargar la imagen que corresponte a la imagen de inicio
-    pantalla_inicio= Image.open(r"C:\Users\Ricar\Documents\Poketec\imagenes\pantalla inicio.png")
+    pantalla_inicio= Image.open(r"..\imagenes\Pantalla inicio.png")
     pantalla_inicio= pantalla_inicio.resize((1580,850))
     return ImageTk.PhotoImage(pantalla_inicio)
 img = cargar_imagen1("pantalla inicio")
@@ -573,6 +573,8 @@ def boton_vamos():
     else:
         Label_falta_requisitos.place(x=100,y=700)
 
+def prueba():
+    print("hola")
 imagen_vamos=PhotoImage(file=r"C:\Users\Ricar\Documents\Poketec\imagenes\Boton vamos (1).png")    
 Label_falta_requisitos=Label(main_window, text="SOLAMENTE PUEDES AVANZAR SI TIENES 3 POKEMONES SELECCIONADOS", font=("pokemon pixel font",30))  
 boton_vamos=tk.Button(main_window, text="¡VAMOS!", command=boton_vamos, image=imagen_vamos)
