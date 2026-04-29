@@ -3,35 +3,38 @@
 
 #Establecimiento de la ventana
 from tkinter import *
+import random
 import tkinter as tk
 main_window=Tk()
 main_window.title("Pokemon stadium Tec edition")
 main_window.state("zoomed") 
 
 #establecimiento de los diccionarios de pokemons, usuario, oponente y apariencias
-Pokemons={"pikachu":{"cualidades":{"vida":90,"defensa":7,"ataque":27},"imagenes":{"frente":PhotoImage(file=r"..\imagenes\Pokemons\Pikachu frente.png"),"espalda":PhotoImage(file=r"..\imagenes\Pokemons\Pikachu atras.png")}},
-          "charmander":{"cualidades":{"vida":100, "defensa":8, "ataque":29},"imagenes":{"frente":PhotoImage(file=r"C:\Users\Ricar\Documents\Poketec\imagenes\Pokemons\Charmander frente.png"),"espalda":PhotoImage(file=r"C:\Users\Ricar\Documents\Poketec\imagenes\Pokemons\charmnde espalda.png")}},
-          "onix":{"cualidades":{"vida":150,"defensa":20,"ataque":25},"imagenes":{"frente":PhotoImage(file=r"C:\Users\Ricar\Documents\Poketec\imagenes\Pokemons\onix frente.png"),"espalda":PhotoImage(file=r"C:\Users\Ricar\Documents\Poketec\imagenes\Pokemons\onix espalda.png")}},
-          "bulbasur":{"cualidades":{"vida":110,"defensa":7,"ataque":28},"imagenes":{"frente":PhotoImage(file=r"C:\Users\Ricar\Documents\Poketec\imagenes\Pokemons\bulbasaur frente.png"),"espalda":PhotoImage(file=r"C:\Users\Ricar\Documents\Poketec\imagenes\Pokemons\bulbasaur espalda.png")}},
-          "ivy":{"cualidades":{"vida":135,"defensa":4,"ataque":20},"imagenes":{"frente":PhotoImage(file=r"C:\Users\Ricar\Documents\Poketec\imagenes\Pokemons\eevee frente.png"),"espalda":PhotoImage(file=r"C:\Users\Ricar\Documents\Poketec\imagenes\Pokemons\eevee espalda.png")}},
-          "gyarados":{"cualidades":{"vida":85,"defensa":6,"ataque":38},"imagenes":{"frente":PhotoImage(file=r"C:\Users\Ricar\Documents\Poketec\imagenes\Pokemons\gyarados frente.png"),"espalda":PhotoImage(file=r"C:\Users\Ricar\Documents\Poketec\imagenes\Pokemons\gyarados espalda.png")}},
-          "squirtle":{"cualidades":{"vida":90,"defensa":10,"ataque":25},"imagenes":{"frente":PhotoImage(file=r"C:\Users\Ricar\Documents\Poketec\imagenes\Pokemons\squirtle frente.png"),"espalda":PhotoImage(file=r"C:\Users\Ricar\Documents\Poketec\imagenes\Pokemons\squirtle espalda.png")}},
-          "dragonite":{"cualidades":{"vida":105,"defensa":8,"ataque":29},"imagenes":{"frente":PhotoImage(file=r"C:\Users\Ricar\Documents\Poketec\imagenes\Pokemons\dragonite frente.png"),"espalda":PhotoImage(file=r"C:\Users\Ricar\Documents\Poketec\imagenes\Pokemons\dragonite espalda.png")}},
-          "mewto":{"cualidades":{"vida":150,"defensa":20,"ataque":135},"imagenes":{"frente":PhotoImage(file=r"C:\Users\Ricar\Documents\Poketec\imagenes\Pokemons\mewtwo frente.png"),"espalda":PhotoImage(file=r"C:\Users\Ricar\Documents\Poketec\imagenes\Pokemons\mewtwo atras.png")}},
-          "jiglypuff":{"cualidades":{"vida":80,"defensa":25,"ataque":22},"imagenes":{"frente":PhotoImage(file=r"C:\Users\Ricar\Documents\Poketec\imagenes\Pokemons\jigglypuff frente.png"),"espalda":PhotoImage(file=r"C:\Users\Ricar\Documents\Poketec\imagenes\Pokemons\jigglypuff espalda.png")}},}
+Pokemons={"pikachu":{"cualidades":{"vida":900,"defensa":70,"ataque":270},"imagenes":{"frente":PhotoImage(file=r"..\imagenes\Pokemons\Pikachu frente.png"),"espalda":PhotoImage(file=r"..\imagenes\Pokemons\Pikachu atras.png")}},
+          "charmander":{"cualidades":{"vida":1000, "defensa":80, "ataque":290},"imagenes":{"frente":PhotoImage(file=r"..\imagenes\Pokemons\Charmander frente.png"),"espalda":PhotoImage(file=r"..\imagenes\Pokemons\charmnde espalda.png")}},
+          "onix":{"cualidades":{"vida":1500,"defensa":20,"ataque":250},"imagenes":{"frente":PhotoImage(file=r"..\imagenes\Pokemons\onix frente.png"),"espalda":PhotoImage(file=r"..\imagenes\Pokemons\onix espalda.png")}},
+          "bulbasur":{"cualidades":{"vida":1100,"defensa":70,"ataque":280},"imagenes":{"frente":PhotoImage(file=r"..\imagenes\Pokemons\bulbasaur frente.png"),"espalda":PhotoImage(file=r"..\imagenes\Pokemons\bulbasaur espalda.png")}},
+          "ivy":{"cualidades":{"vida":1350,"defensa":40,"ataque":20},"imagenes":{"frente":PhotoImage(file=r"..\imagenes\Pokemons\eevee frente.png"),"espalda":PhotoImage(file=r"..\imagenes\Pokemons\eevee espalda.png")}},
+          "gyarados":{"cualidades":{"vida":850,"defensa":60,"ataque":380},"imagenes":{"frente":PhotoImage(file=r"..\imagenes\Pokemons\gyarados frente.png"),"espalda":PhotoImage(file=r"..\imagenes\Pokemons\gyarados espalda.png")}},
+          "squirtle":{"cualidades":{"vida":900,"defensa":10,"ataque":250},"imagenes":{"frente":PhotoImage(file=r"..\imagenes\Pokemons\squirtle frente.png"),"espalda":PhotoImage(file=r"..\imagenes\Pokemons\squirtle espalda.png")}},
+          "dragonite":{"cualidades":{"vida":1050,"defensa":80,"ataque":290},"imagenes":{"frente":PhotoImage(file=r"..\imagenes\Pokemons\dragonite frente.png"),"espalda":PhotoImage(file=r"..\imagenes\Pokemons\dragonite espalda.png")}},
+          "mewto":{"cualidades":{"vida":3500,"defensa":20,"ataque":135},"imagenes":{"frente":PhotoImage(file=r"..\imagenes\Pokemons\mewtwo frente.png"),"espalda":PhotoImage(file=r"..\imagenes\Pokemons\mewtwo atras.png")}},
+          "jiglypuff":{"cualidades":{"vida":800,"defensa":25,"ataque":220},"imagenes":{"frente":PhotoImage(file=r"..\imagenes\Pokemons\jigglypuff frente.png"),"espalda":PhotoImage(file=r"..\imagenes\Pokemons\jigglypuff espalda.png")}},}
 
-apariencias={"avatar1":PhotoImage(file=r"C:\Users\Ricar\Documents\Poketec\imagenes\Apariencias\Avatar 1.png"),
-             "avatar2":PhotoImage(file=r"C:\Users\Ricar\Documents\Poketec\imagenes\Apariencias\Avatar 2.png"),
-             "avatar3":PhotoImage(file=r"C:\Users\Ricar\Documents\Poketec\imagenes\Apariencias\Avatar 3.png"),
-             "avatar4":PhotoImage(file=r"C:\Users\Ricar\Documents\Poketec\imagenes\Apariencias\Avatar 4.png"),
-             "avatar5":PhotoImage(file=r"C:\Users\Ricar\Documents\Poketec\imagenes\Apariencias\Avatar 5.png")}
+apariencias={"avatar1":PhotoImage(file=r"..\imagenes\Apariencias\Avatar 1.png"),
+             "avatar2":PhotoImage(file=r"..\imagenes\Apariencias\Avatar 2.png"),
+             "avatar3":PhotoImage(file=r"..\imagenes\Apariencias\Avatar 3.png"),
+             "avatar4":PhotoImage(file=r"..\imagenes\Apariencias\Avatar 4.png"),
+             "avatar5":PhotoImage(file=r"..\imagenes\Apariencias\Avatar 5.png")}
  
 Jugador={"nombre":{},
          "apariencia":{},
-         "pokemones":{}}
+         "pokemones":{},
+         "pokemon combatiente":{}}
 
 oponente={"pokemons":{},
-          "apariencia":{}}
+          "apariencia":{},
+          "pokemon combatiente":{}}
 
 #inserción de la imagen de pantalla de inicio y canvas
 from PIL import Image, ImageTk
@@ -49,7 +52,7 @@ primera=main_canvas.create_image(0, 0, anchor="nw", image=img)
 #creación de botton start
 def cargar_imagen2(nombre):
     #esta funcion sirve para usar la imagen de la seleccion de personaje
-     pantalla_personaje=Image.open(r"C:\Users\Ricar\Documents\Poketec\imagenes\Diseño sin título (2).png")
+     pantalla_personaje=Image.open(r"..\imagenes\Diseño sin título (2).png")
      pantalla_personaje=pantalla_personaje.resize((1538,788))
      return ImageTk.PhotoImage(pantalla_personaje)
   
@@ -75,7 +78,7 @@ def iniciar():
     #se desaparece a si mismo
     boton_star.place_forget()
 
-imagen_star=PhotoImage(file=r"C:\Users\Ricar\Documents\Poketec\imagenes\boton start.png")#imagen que usa el boton start
+imagen_star=PhotoImage(file=r"..\imagenes\boton start.png")#imagen que usa el boton start
 boton_star = tk.Button(main_window, text="START",command=iniciar, image=imagen_star)
 boton_star.pack(fill="both",expand=True)
 boton_star.place(x=700,y=500)
@@ -94,8 +97,8 @@ caja_nombre.bind("<Return>",poner_nombre)#esto sirve para que al presionar enter
 restriccion_avatares= Label(main_window, text="SOLO PUEDES TENER UN ENTRENADOR, SI QUIERES CAMBIAR DESELECCIONA EL QUE NO QUIERES", font=("pokemon pixel font",30))
 
 #imagenes para los botones seleccionadores y deseleccionadores
-imagen_seleccionar=PhotoImage(file=r"C:\Users\Ricar\Documents\Poketec\imagenes\boton de seleccionar.png")
-imagen_deseleccionadores=PhotoImage(file=r"C:\Users\Ricar\Documents\Poketec\imagenes\boton deseleccionar.png")
+imagen_seleccionar=PhotoImage(file=r"..\imagenes\boton de seleccionar.png")
+imagen_deseleccionadores=PhotoImage(file=r"..\imagenes\boton deseleccionar.png")
 
 #Botones para seleccionar y deseleccionar avatar 1
 def seleccionar_avatar1():
@@ -232,7 +235,7 @@ mensaje_falta_requisitos= Label(main_window, text="SOLO PUEDES SELECCIONAR A UN 
 
 #establecimiento boton siguiente
 def cargar_imagen3():
-   pantalla_pokemons= Image.open(r"C:\Users\Ricar\Documents\Poketec\imagenes\seleccionador pokemons.png")
+   pantalla_pokemons= Image.open(r"..\imagenes\seleccionador pokemons.png")
    pantalla_pokemons=pantalla_pokemons.resize((1532,787))
    return ImageTk.PhotoImage(pantalla_pokemons)
 
@@ -279,14 +282,14 @@ def seguir_pokemons():
         mensaje_falta_requisitos.place(x=300,y=60)
     
     
-imagen_siguiente=PhotoImage(file=r"C:\Users\Ricar\Documents\Poketec\imagenes\boto seleccionar.png") 
+imagen_siguiente=PhotoImage(file=r"..\imagenes\boto seleccionar.png") 
 boton_siguiente=tk.Button(main_window,text="Siguiente",command=seguir_pokemons, image=imagen_siguiente)
 boton_siguiente.pack(fill=BOTH,expand=True)
 
 #establecimiento de las funciones de los botones para seleccionar pokemons
 #imagenes para los botones
-imagen_seleccionadores=PhotoImage(file=r"C:\Users\Ricar\Documents\Poketec\imagenes\boton elegir pruebz.png")
-imagen_eliminaciones=PhotoImage(file=r"C:\Users\Ricar\Documents\Poketec\imagenes\boton eliminar prueba.png")
+imagen_seleccionadores=PhotoImage(file=r"..\imagenes\boton elegir pruebz.png")
+imagen_eliminaciones=PhotoImage(file=r"..\imagenes\boton eliminar prueba.png")
 
 #seleccionador y eliminador de pikachu
 def elegir_pikachu():
@@ -511,7 +514,7 @@ boton_nojiglypuff.pack(fill=BOTH, expand=True)
 
 #creacion del boton !VAMO! para inciar las batallas
 def cargar_imagen4():
-    pantalla_combate=Image.open(r"C:\Users\Ricar\Documents\Poketec\imagenes\imagen prebatalla.png")
+    pantalla_combate=Image.open(r"..\imagenes\imagen prebatalla.png")
     pantalla_combate=pantalla_combate.resize((1555,790))
     return ImageTk.PhotoImage(pantalla_combate)
 
@@ -527,6 +530,7 @@ def boton_vamos():
         #luego se pone la nueva imagen del fondo
         nueva_imagen=cargar_imagen4()
         main_canvas.create_image(0,0,anchor="nw",image=nueva_imagen)
+        
         
         #se borran los botones de la seleccion de pokemones y a el mismo
         boton_pikachu.place_forget()
@@ -553,15 +557,18 @@ def boton_vamos():
         
         #pone el avatar seleccionado y el avatar del rival en la pantalla de prebatalla
         imagen_avatar= Jugador["apariencia"]
+        global label_avatar
         label_avatar=Label(main_window,image=imagen_avatar)
         label_avatar.place(x=128,y=175)
-        
+        global label_oponente
         imagen_oponente=oponente["apariencia"]
         label_oponente=Label(main_window, image=imagen_oponente)
         label_oponente.place(x=1150, y=175) 
         
         
         #seleccionador de pokemon para la batalla
+        global menu_pokemons_disponibles
+        global pokemon_peleador
         pokemon_peleador=StringVar()#esto ayuda a que se actualice constantemente
         pokemon_peleador.set("elige un pokemon para pelear")
         if len(Jugador["pokemones"])>0:
@@ -570,16 +577,220 @@ def boton_vamos():
             menu_pokemons_disponibles["menu"].config(font=("Pokemon pixel font",30),bd=3,relief="solid")
             
             menu_pokemons_disponibles.place(x=550,y=580)
+        
+        #coloca el boton para pelear
+        boton_combate.place(x=620,y=300)
     else:
         Label_falta_requisitos.place(x=100,y=700)
 
-def prueba():
-    print("hola")
-imagen_vamos=PhotoImage(file=r"C:\Users\Ricar\Documents\Poketec\imagenes\Boton vamos (1).png")    
-Label_falta_requisitos=Label(main_window, text="SOLAMENTE PUEDES AVANZAR SI TIENES 3 POKEMONES SELECCIONADOS", font=("pokemon pixel font",30))  
-boton_vamos=tk.Button(main_window, text="¡VAMOS!", command=boton_vamos, image=imagen_vamos)
 
+imagen_vamos=PhotoImage(file=r"..\imagenes\Boton vamos (1).png")    
+Label_falta_requisitos=Label(main_window, text="SOLAMENTE PUEDES AVANZAR SI TIENES 3 POKEMONES SELECCIONADOS", font=("pokemon pixel font",30))  
+boton_vamos=tk.Button(main_window, command=boton_vamos, image=imagen_vamos)
+
+#boton para combate
+label_pokemon_necesario=Label(main_window,text="tienes que seleccionar un pokemon para pelear", font=("pokemon pixel font",30))
+
+def cargar_imagen5():
+    pantalla_batalla= Image.open(r"..\imagenes\campo batalla.png")
+    pantalla_batalla=pantalla_batalla.resize((1555,790))
+    return ImageTk.PhotoImage(pantalla_batalla)
+def combatir():
+    pokemon_seleccionado = pokemon_peleador.get()
+    #condicional hecha para asegurarse de que el jugador seleccione un pokemon
+    if pokemon_seleccionado in Jugador["pokemones"]:
+        #mete a el pokemon seleccionado en la categoria de pokemon peleador
+        Jugador["pokemon combatiente"] = {pokemon_seleccionado: Jugador["pokemones"][pokemon_seleccionado].copy()}
+        
+        #hace que el oponente seleccione un pokemon random
+        pokemon_oponente= random.choice(list(oponente["pokemons"].keys()))
+        oponente["pokemon combatiente"]={pokemon_oponente:oponente["pokemons"][pokemon_oponente].copy()}
+        
+        #elimina el label de error y los botones ademas del fondo
+        img4=cargar_imagen4()
+        quinta=main_canvas.create_image(0,0,anchor="nw", image=img4)
+        del quinta
+        label_pokemon_necesario.place_forget()
+        label_avatar.place_forget()
+        label_oponente.place_forget()
+        boton_combate.place_forget()
+        menu_pokemons_disponibles.place_forget()
+
+        #pone el fondo de el escenario de batalla
+        img5=cargar_imagen5()
+        main_canvas.create_image(0,0,anchor="nw",image=img5)
+        
+        #poner las imagenes de los pokemones que combaten
+        imagenen_pokemon_jugador= Jugador["pokemon combatiente"][pokemon_seleccionado]["imagenes"]["espalda"]
+        main_canvas.create_image(300,395,image=imagenen_pokemon_jugador)
+        
+        imagen_pokemon_oponente=oponente["pokemon combatiente"][pokemon_oponente]["imagenes"]["frente"]
+        main_canvas.create_image(1200,250,image=imagen_pokemon_oponente)
+        
+        #posisionamiento de las barras de vida
+        vida_jugador()
+        label_vida_jugador.place(x=950,y=395)
+        vida_oponente()
+        label_vida_oponente.place(x=500, y=60)
+        
+        #posisionamiento boton ataque
+        boton_ataque.place(x=100,y=600)
+
+    else:
+        label_pokemon_necesario.place(x=0, y=0)
+    
+imagen_botonCombate=PhotoImage(file=r"..\imagenes\Boton batalla.png")
+boton_combate= tk.Button(main_window, image=imagen_botonCombate, command=combatir)
+
+#barras de vida
+vida_pokemon_jugador=StringVar()
+label_vida_jugador= Label(main_window, textvariable=vida_pokemon_jugador, font=("pokemon pixel font",50), bg="white", bd=3, relief="solid")
+
+def vida_jugador():
+    pokemon=list(Jugador["pokemon combatiente"].keys())[0]
+    cualidades= Jugador["pokemon combatiente"][pokemon]
+    vida_pokemon_jugador.set(f"{pokemon}          VIDA:{cualidades['cualidades']['vida']}" )
+
+
+viida_pokemon_oponente=StringVar()
+label_vida_oponente=Label(main_window, textvariable=viida_pokemon_oponente, font=("pokemon pixel font",50), bg="white",bd=3, relief="solid")
+
+def vida_oponente():
+    pokemon=list(oponente["pokemon combatiente"].keys())[0]
+    cualidades=oponente["pokemon combatiente"][pokemon]
+    viida_pokemon_oponente.set(f"{pokemon}          VIDA:{cualidades['cualidades']['vida']}")
+    
+    
+#boton ataque
+def atacar():
+    # nombre y datos de los pokemons
+    nombre_pokemon = list(Jugador["pokemon combatiente"].keys())[0]
+    datos_pokemon = Jugador["pokemon combatiente"][nombre_pokemon]
+
+    nombre_pokemon_oponente = list(oponente["pokemon combatiente"].keys())[0]
+    datos_pokemon_oponete = oponente["pokemon combatiente"][nombre_pokemon_oponente]
+
+    ataque_jugador = datos_pokemon["cualidades"]["ataque"]
+    ataque_oponente = datos_pokemon_oponete["cualidades"]["ataque"]
+
+    defensa_jugador = datos_pokemon["cualidades"]["defensa"]
+    defensa_oponente = datos_pokemon_oponete["cualidades"]["defensa"]
+
+    daño_jugador = ataque_jugador - defensa_oponente
+    
+    #es un restricción para asegurarse de que no hayan un "daño negativo"
+    if daño_jugador < 1:
+        daño_jugador = 1
+
+    datos_pokemon_oponete["cualidades"]["vida"] -= daño_jugador
+    
+    #es una restriccion para que la vida pare en 0
+    if datos_pokemon_oponete["cualidades"]["vida"] < 0:
+        datos_pokemon_oponete["cualidades"]["vida"] = 0
+
+    vida_oponente()
+
+    #condicional por si el jugador gana
+    if datos_pokemon_oponete["cualidades"]["vida"] <= 0:
+        pokemon_ganado = datos_pokemon_oponete.copy()
+        pokemon_ganado["cualidades"]["vida"] = Pokemons[nombre_pokemon_oponente]["cualidades"]["vida"]
+
+        Jugador["pokemones"][nombre_pokemon_oponente] = pokemon_ganado
+        del oponente["pokemons"][nombre_pokemon_oponente]
+
+        Jugador["pokemon combatiente"] = {}
+        oponente["pokemon combatiente"] = {}
+
+        label_ganaste.place(x=600,y=400)
+        boton_ataque.place_forget()
+        boton_continuar.place(x=100,y=600)
+        return
+
+    daño_oponente = ataque_oponente - defensa_jugador
+
+    if daño_oponente < 1:
+        daño_oponente = 1
+
+    datos_pokemon["cualidades"]["vida"] -= daño_oponente
+
+    if datos_pokemon["cualidades"]["vida"] < 0:
+        datos_pokemon["cualidades"]["vida"] = 0
+
+    vida_jugador()
+    
+    #condicional por si el oponente gana
+    if datos_pokemon["cualidades"]["vida"] <= 0:
+        pokemon_perdido = datos_pokemon.copy()
+        pokemon_perdido["cualidades"]["vida"] = Pokemons[nombre_pokemon]["cualidades"]["vida"]
+
+        oponente["pokemons"][nombre_pokemon] = pokemon_perdido
+        del Jugador["pokemones"][nombre_pokemon]
+
+        Jugador["pokemon combatiente"] = {}
+        oponente["pokemon combatiente"] = {}
+
+        label_perdiste.place(x=600,y=400)
+        boton_ataque.place_forget()
+        boton_continuar.place(x=100,y=600)
+    
+        return
+    
+imagen_boton_ataque= PhotoImage(file=r"..\imagenes\Boton ataque.png")
+boton_ataque= tk.Button(main_window, image=imagen_boton_ataque, command= atacar )   
+
+label_ganaste= Label(main_window, text="GANASTE", font=("Pokemon pixel font",50))
+label_perdiste= Label(main_window, text="PERDISTE", font=("Pokemon pixel font",50))
+
+#establecimiento boton continuar
+#luego se pone la nueva imagen del fondo
+def continuar():
+    global label_oponente
+    global label_avatar
+    global menu_pokemons_disponibles
+    global pokemon_peleador
+    img5= cargar_imagen5()
+    quinta=main_canvas.create_image(0,0, anchor="nw", image=img5)
+    main_canvas.delete(quinta)
+    
+    nueva_imagen=cargar_imagen4()
+    main_canvas.create_image(0,0,anchor="nw",image=nueva_imagen)
+    
+    boton_continuar.place_forget()
+    label_perdiste.place_forget()
+    label_ganaste.place_forget()
+    label_vida_jugador.place_forget()
+    label_oponente.place_forget()
+    label_vida_oponente.place_forget()
+    
+    #pone el avatar seleccionado y el avatar del rival en la pantalla de prebatalla
+    imagen_avatar= Jugador["apariencia"]
+   
+    label_avatar=Label(main_window,image=imagen_avatar)
+    label_avatar.place(x=128,y=175)
+   
+    imagen_oponente=oponente["apariencia"]
+    label_oponente=Label(main_window, image=imagen_oponente)
+    label_oponente.place(x=1150, y=175) 
+        
+        
+    #seleccionador de pokemon para la batalla
+   
+    pokemon_peleador=StringVar()#esto ayuda a que se actualice constantemente
+    pokemon_peleador.set("elige un pokemon para pelear")
+    if len(Jugador["pokemones"])>0:
+         menu_pokemons_disponibles= OptionMenu(main_window, pokemon_peleador, *Jugador["pokemones"].keys())
+         menu_pokemons_disponibles.config(font=("Pokemon pixel font",30),width=30,bd=3,relief="solid")
+         menu_pokemons_disponibles["menu"].config(font=("Pokemon pixel font",30),bd=3,relief="solid")
+            
+         menu_pokemons_disponibles.place(x=550,y=580)
+        
+    #coloca el boton para pelear
+    boton_combate.place(x=620,y=300)
+    
+    
+    
+boton_continuar= tk.Button(main_window, image=imagen_siguiente,command=continuar)
+        
 
     
-
 main_window.mainloop()
